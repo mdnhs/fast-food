@@ -1,19 +1,27 @@
-import { Button } from "@/components/ui/button"
+import { SceneContainer } from "@/components/3d/scene-container"
+import { AmbientBackground } from "@/components/common/ambient-background"
+import { CraftSection } from "@/components/sections/craft-section"
+import { ExplodedSection } from "@/components/sections/exploded-section"
+import { Footer } from "@/components/sections/footer"
+import { HeroSection } from "@/components/sections/hero-section"
+import { MenuSection } from "@/components/sections/menu-section"
+import { Navbar } from "@/components/sections/navbar"
+import { Testimonials } from "@/components/sections/testimonials"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <>
+      <AmbientBackground />
+      <SceneContainer />
+      <Navbar />
+      <main className="relative z-10">
+        <HeroSection />
+        <ExplodedSection />
+        <MenuSection />
+        <CraftSection />
+        <Testimonials />
+      </main>
+      <Footer />
+    </>
   )
 }
